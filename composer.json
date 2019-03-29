@@ -1,8 +1,8 @@
 {
-	"name": "noud/saml2",
+	"name": "muer/phpbb-saml2",
 	"type": "phpbb-extension",
-	"description": "SAML2 authentication plugin",
-	"homepage": "https://github.com/noud/phpbb-saml2",
+	"description": "SAML2 authentication plugin with claim username in separate field to allow username changes",
+	"homepage": "https://github.com/MueR/phpbb-saml2",
 	"version": "1.0.4",
 	"keywords": ["phpBB", "Extension", "SAML", "SAML2"],
 	"license": "GPL-2.0-only",
@@ -12,7 +12,13 @@
 			"email": "noud4@home.nl",
 			"homepage": "https://github.com/noud",
 			"role": "Developer"
+		},
+		{
+			"name": "Bas Scholts",
+			"homepage": "https://github.com/MueR",
+			"role": "Developer"
 		}
+
 	],
 	"support": {
 		"issues": ""

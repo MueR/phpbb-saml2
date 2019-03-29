@@ -31,11 +31,11 @@ class UserManager
         if ($allFields) {
             $fields = '*';
         } else {
-            $fields = 'user_id, username, user_password, user_passchg, user_email, user_type, user_login_attempts';
+            $fields = 'user_id, username, user_password, user_passchg, user_email, user_type, user_login_attempts, saml_username';
         }
         $sql = 'SELECT ' . $fields . '
        		FROM ' . USERS_TABLE . "
-       		WHERE username = '" . $db->sql_escape($claimsUser->userName) . "'";
+       		WHERE saml_username = '" . $db->sql_escape($claimsUser->userName) . "'";
         $result = $db->sql_query($sql);
         $row = $db->sql_fetchrow($result);
         $db->sql_freeresult($result);
@@ -109,7 +109,7 @@ class UserManager
 
         global $db;
 
-        $sql = 'UPDATE ' . USERS_TABLE . ' SET ' . $db->sql_build_array('UPDATE', $data) . ' WHERE username = ' . $db->sql_escape($claimsUser->userName) . "'";
+        $sql = 'UPDATE ' . USERS_TABLE . ' SET ' . $db->sql_build_array('UPDATE', $data) . ' WHERE saml_username = ' . $db->sql_escape($claimsUser->userName) . "'";
 
         $result = $db->sql_query($sql);
         $db->sql_freeresult($result);

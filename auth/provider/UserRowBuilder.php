@@ -12,6 +12,7 @@ class UserRowBuilder
         $passwords_manager = $phpbb_container->get('passwords.manager');
 
         $user_row = array(
+            'saml_username' => $claimsUser->userName,
             'username' => $claimsUser->userName,
             'user_password' => $passwords_manager->hash(PasswordFactory::generate()),
             'user_email' => $claimsUser->email,
